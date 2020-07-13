@@ -9,17 +9,17 @@ const Estudiantes = require('./models/Estudiantes');
 const PORT = 3000;
 
 
-// Configuracion
+// config
 app.set('view engine', 'pug');
 app.set('views', './views');
 
 
-// Intermediarios
+// inter
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
 
-// Controladores - Views
+// controladores
 app.get('/estudiantes', async (req, res) => {
     const estudiantes = await Estudiantes.find().select('nombre edad');
     res.render('estudiantes', { estudiantes });
