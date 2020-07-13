@@ -1,0 +1,22 @@
+{
+  "name": "naylea_trigueros_laboratorio_7",
+  "version": "1.0.0",
+  "description": "Lab 7",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2020-SEMI-DESIX-G1/naylea_trigueros_laboratorio_7.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/2020-SEMI-DESIX-G1/naylea_trigueros_laboratorio_7/issues"
+  },
+  "homepage": "https://github.com/2020-SEMI-DESIX-G1/naylea_trigueros_laboratorio_7#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
