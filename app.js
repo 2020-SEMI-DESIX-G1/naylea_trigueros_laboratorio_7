@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 const connectDb = require('./dbConfig');
-const Estudiantes = require('./models/Estudiantes');
+const Estudiantes = require('./Estudiantes');
 
 const PORT = 3000;
 
@@ -40,6 +40,18 @@ app.post('/estudiantes', async (req, res) => {
     res.render('estudiantes', { estudiantes });
 });
 
+app.post('/estudiantes/update/:id', async (req, res) => {
+    const { nombre, edad } = req.body;
+    await Estudiantes.findById(req.params.id).update({ nombre, edad });
+    const estudiantes = await Estudiantes.find().select('nombre edad');
+    res.redirect('/estudiantes');
+});
+
+app.post('/estudiantes/delete/:id' ,async (req ,res) => {
+    await Estudiantes.findByIdAndDelete(req.params.id);
+    const estudiantes = await Estudiantes.find().select('nombre edad');
+    res.render('estudiantes', { estudiantes });
+});
 
 // Controladores - API
 app.get('/api/estudiantes/', async (req, res) => {
